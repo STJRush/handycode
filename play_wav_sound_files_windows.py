@@ -10,7 +10,7 @@ winsound.PlaySound('typeyoursoundfilename.wav', winsound.SND_FILENAME)
 
 
 
-#Method 2 Can play .wavs and some .mp3 files
+#Method 2 Can play .wavs and some .mp3 files but THIS MODULE MUST BE INSTALLED ON THE COMPUTER BY ADMIN
 
 import pyglet 
 
