@@ -1,7 +1,7 @@
 save=["insert_text_here"]
     save.append(save)
  
-    target1 = open('yourlocalclimate.txt', 'w')
+    target1 = open('your_file_name.txt', 'w')
  
     target1.write(result)
  
