@@ -74,7 +74,9 @@ while True:
 
         #reads the database to see if it's updated (takes 10 seconds)
         result = firebase.get('/cookieMeter', None)
+        print("Me see that firebase has..")
         print(result)
+        print("Delicious....scrumcious....coookies")
         time.sleep(4)
         
         
