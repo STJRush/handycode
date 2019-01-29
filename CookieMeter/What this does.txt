@@ -1,0 +1,4 @@
+When a weight sensor is connected to a rapsberry pi, this code sends that to a database such that you can read it on a phone app.
+
+The full instructions are here:
+https://docs.google.com/document/d/11mXCblg5Osas-MobqXqqu5gvMX5BdV-sG4j6_8Osugg/edit?usp=sharing
