@@ -39,9 +39,16 @@ def distcheck():  #defines a neat function to gather up all the code needed for 
 
 
 ######## Start of program #########
+f = open("distchart.csv", "w", newline="")
+rc=csv.writer(f)                     
+rc.writerow(["dist", "time"])
 
-print(distcheck())                                #runs the function above
 
+for x in range(5):
+    recordedDist = distcheck()  #refreshes the distance measurement
+    rc. writerow([recordedDist, "1"]) #writes it into the next row
+
+f.close()
 
 
 
