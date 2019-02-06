@@ -38,17 +38,17 @@ def distcheck():  #defines a neat function to gather up all the code needed for 
   return distance
 
 
-######## Start of program #########
-f = open("distchart.csv", "w", newline="")
-rc=csv.writer(f)                     
-rc.writerow(["dist", "time"])
+######## Takes 5 reading from sensor and writes them to a .csv #########
 
+f = open("distchart.csv", "w", newline="") #give your .csv file a name
+rc=csv.writer(f)                           
 
-for x in range(5):
-    recordedDist = distcheck()  #refreshes the distance measurement
-    rc. writerow([recordedDist, "1"]) #writes it into the next row
+rc.writerow(["Distance from sensor"])      #start with a heading
 
-f.close()
+for x in range(5):                         #take five readings
+    rc. writerow([distcheck()])            #writes distance into the next row
+
+f.close()                                  #close the file when done to prevent data loss
 
 
 
