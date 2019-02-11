@@ -21,7 +21,7 @@ print("Just one element is", (dataListed[0])[0])
 # it's like saying I want the thing in row 1, column 2 except
 # that in python we always count from zero, not one.
 
-
+f.close()
 
 
 
