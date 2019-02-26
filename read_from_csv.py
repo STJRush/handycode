@@ -36,11 +36,14 @@ Distance     Time
    4          34
    6          56
 
-print(dataListed[0][0]) will give you the first row 2
+print(dataListed[0][0]) will give you the first element on the first row which is 2
 
 """
 
-
+print(dataListed[0][1]) #will give you the second element on the first row which is 23
+print(dataListed[1][0]) #will give you second row, first element which is 4
+print(dataListed[1][1]) #will give you second row, second element which is 34
+print(dataListed[1][3]) #will try give you second row, fourth element but that's out of range so that's an error
 
 # it's like saying I want the thing in row 1, column 2 except
 # that in python we always count from zero, not one.
