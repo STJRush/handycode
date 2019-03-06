@@ -1,13 +1,14 @@
-import subprocess
+import subprocess 
 import smtplib
 import socket
 from email.mime.text import MIMEText
 import datetime
+
 #account info
 to = 'example@gmail.com'
 gmail_user = 'example@gmail.com'
 gmail_password = 'your_password'
-smtpserver = smtplib.SMTP('smtp.gmail.com', 587)
+smtpserver = smtplib.SMTP('smtp.gmail.com', 587) # that's just the defualt gmail server address
 smtpserver.ehlo()
 smtpserver.starttls()
 smtpserver.login(gmail_user, gmail_password)
@@ -22,5 +23,5 @@ msg=MIMEText(my_ip)
 msg['Subject']= 'the_subject'
 msg['From']= gmail_user
 msg['To'] = to
-smtpserver.sendmail(gmail_user, [to], msg.as_string())
+smtpserver.sendmail(gmail_user, [to], msg.as_string()) # no idea what this does
 smtpserver.quit()
