@@ -118,4 +118,3 @@ print("The intercept is", z[1])
 print("The equation of the line is y="+str(round(z[0],2))+"x+"+str(round(z[1],2)))
 plt.show()
 
-
