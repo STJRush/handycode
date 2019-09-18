@@ -47,4 +47,20 @@ for num in remainderList: #check each number in the list
         
 print(remainderListWithLetters)
 
+"""
+Sample output:
+
+Rough work
+52  r 13
+3  r 4
+0  r 3
+With numbers only 
+
+[3, 4, 13]
+
+ With proper letters 
+
+[3, 4, 'D']
+
+"""
 
