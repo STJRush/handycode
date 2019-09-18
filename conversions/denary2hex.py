@@ -1,3 +1,5 @@
+print("This program converts denary to hex and shows rough work along the way")
+
 startNumber= 845
 
 remainderList = []
