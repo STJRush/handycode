@@ -1,4 +1,6 @@
 # install pygal and lxml packages before running this code
+# This program takes a 3 column dirty csv (with some &"% symbols etc), cleans it, saves it to a new clean csv and graphs it.
+
 import pygal
 import lxml
 import csv
