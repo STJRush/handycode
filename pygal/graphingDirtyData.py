@@ -6,6 +6,9 @@ import lxml
 import csv
 import re
 
+
+############### CLEANING FUNCTION
+
 #"valu" should be a string going into the function to get cleaned
 def clean_stuff(valu):
 
@@ -16,6 +19,9 @@ def clean_stuff(valu):
     return valu #send it back all sqeaky clean
 
 
+
+############### OPENING FILE AND TURNING COLUMNS INTO A BIG LIST
+
 f = open("dirty.csv", newline = '') #this is the file we will get dirty data from
 reader = csv.reader(f)
 
@@ -24,10 +30,15 @@ reader = csv.reader(f)
 dataListed= [row for row in reader] #turns the data into a bit list
 
 
+
+############### COUNTING HOW MANY ROWS TO IN CSV TO SET LIMITS LATER ON
+
 #Counts how many rows in the csv file. We'll need this later to limit loops.
 row_count = sum(1 for row in dataListed)
 print("number of rows is", row_count)
 
+
+############### SENDING COLUMNS AWAY TO THE CLEANING FUNCTION BE CLEANED (FOR 3 COLUMNS X,Y and Z)
 
 print("Here is the original list of dirty data..")
 print(dataListed, "\n\n")
@@ -75,7 +86,7 @@ print(zValuesList)
 f.close()
 
 
-################################# write the values to a new .csv file
+################################# WRITE THE CLEANED COLUMNS TO A NEW CLEAN CSV FILE
 
 path = "cleaned.csv"  #your file name, will create or overwrite.
 f = open(path, "w", newline='')
@@ -89,13 +100,14 @@ for i in range(row_count):
 
 f.close()
 
+######################### PREPARE COLUMNS FOR GRAPHING BY ADDING THEM INTO LISTS OF COLUMN 1 vs. COLUMN 2 etc
 
-
-# Turning pairs of columns into x,y series for graphing
-######################################################
 
 # series name = [[int(first column of data), int(second column of data)] for column in reader]
 # REMEMBER: column[0] is the first column, column[1] is the second etc.
+
+######## FOR COLUMNS 1 and 2
+
 
 # opens the csv
 f = open("cleaned.csv", newline='')
@@ -103,6 +115,9 @@ reader = csv.reader(f)
 # makes a list from the first and second columns
 dataListedSeriesA = [[int(column[0]), int(column[1])] for column in reader]
 f.close()
+
+
+######## FOR COLUMNS 1 and 3
 
 # opens the csv
 f = open("cleaned.csv", newline='')
@@ -114,8 +129,7 @@ f.close()
 # you have to close the file between reading each series, no idea why.
 
 
-# Graphing the series using pygal
-######################################################
+############################################# GRAPHING IN PYGAL
 
 disChart = pygal.XY(stroke=False)
 
