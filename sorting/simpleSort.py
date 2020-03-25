@@ -1,4 +1,4 @@
-#simple sort/selection sort
+#simple sort
 
 """
 Start with a list
