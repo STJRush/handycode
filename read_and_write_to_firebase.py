@@ -35,6 +35,7 @@ result = firebase.patch('/sensor/dht2/', {'First_Vals': 4, 'Sec_Vals': 2})
 #Best to use PATCH instead of PUT or POST as it avoids generating a large random number for the node name
 
 
+
 #write to the database (PUT means update current values)
 firebase.put("/dht", "/humidity", "0.00")
 firebase.put("/dht", "/humidity", "1.00")
@@ -45,3 +46,13 @@ data = {"temp": temperature, "humidity": humidity}
 firebase.post('/dht', data)
 
 
+
+#Sending new data to the database without it generating long ID numbers 
+
+from time import sleep  #make sure to add this to the top of your program to use sleep
+
+while True:
+  result = firebase.patch('/sensor/dht/' , {'Reading' + str(dataPointNumber): 42})
+  dataPointNumber = dataPointNumber + 1
+  sleep(10)
+  print("Sent data", dataPointNumber)
