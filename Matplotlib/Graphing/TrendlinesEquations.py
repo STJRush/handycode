@@ -16,9 +16,9 @@ y = data['Temp']
 plt.scatter(x, y)
 
 #some maths
-z = np.polyfit(x, y, 1) 
-f = np.poly1d(z)
-plt.plot(x,f(x),"r--")
+z = np.polyfit(x, y, 1) #1 is linear, 2 is quadratic, 3 is cubic (polynomial fun!)
+f = np.poly1d(z) #1d is a line. There's no 2d because you can't have a 2d line, that's a square.
+plt.plot(x,f(x),"r--") #plot
 
 #z returns two values in a list eg. [-3.91792431e-05  1.56428161e+01]
 #The first value z[0] is the slope and the second x[1] is the y intercept
