@@ -1,0 +1,307 @@
+  _ \                   |                          _ \ _)   __ __| _ _|              
+    /   _` | (_-<  _ \   _ \   -_)   _| _| |  |    __/  |      |     |    ` \    -_) 
+ _|_\ \__,_| ___/ .__/ _.__/ \___| _| _|  \_, |   _|   _|     _|   ___| _|_|_| \___| 
+                 _|                       ___/                                       
+Printed in old school .txt so your slow as snails Raspberry pi can handle it.
+
+Written by Daniel Murray and supported by St.Josephs Secondary School in Rush Co. Dublin, Ireland.
+
+
+#######################################################################
+
+To first log into your Pi remotely from a PC, Phone or ipad
+
+#######################################################################
+
+Before you start, you need a HDMI cable the first time you setup your pi.
+You can't skip that part. Have the network passord saved on your pi before you try any of this.
+
+
+
+Okay so time you start up your pi and connect remotely, you'll have to "Secure Shell" (aka: ssh) into the pi.
+This is that super slick black hacker screen with the green text. 
+
+To do this you'll need an "ssh" application. Now it depends on what you're using to 
+talk to your Raspberry Pi.
+
+
+- On a windows computer you can download a program 
+  called "puttty.exe"
+
+  You can download that here:
+  http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+- On an ipad, you can use an app called "iTerminal" or "everauditor" from the app store.
+
+- On an android device you can use an app called "Juice" from the play store.
+
+
+
+No matter what you're using you're going to need three things:
+
+- The ip address of your pi on your netowrk  eg. 192.168.1.8
+
+- The Login and Password for your Pi. The default is login "pi" Password "Raspberry"
+  (don't forget there's a "p" in Raspberry!)
+
+- The port (which by default tends to be 22 for ssh)
+
+
+## WHERE DO I FIND MY IP ADDRESS?? ##
+
+Okay so you need to plug your Pi via HDMI cable into a TV or monitor. 
+Start it up and when on the desktop open the LXTerminal.
+This is also found under programs>other>LXTerminal.
+Now type the following:
+
+Hostname -I
+
+That's with a capital I and a minus symbol. What will pop up in response (providing you've
+a WiFi dongle in your Pi and are conencted to a network) is something like
+
+192.168.0.2
+
+
+This is the address of your pi on your network. (Watch out this can change after a few days!)
+
+
+##Oh Man! I've no HDMI slot on my TV or Monitor##
+
+Oh you just had to go and make life hard didn't you? Roll them sleeves up.
+
+Okay, here's what you can try (and best of luck because this is the scenic route)
+
+In your internet browser on your home PC, find the page for your internet router and type
+this into the URL address bar.
+
+The address is ususally something like 192.168.0.1
+
+For your own router, you can find the actual address and default password on this amazing
+ website: http://portforward.com/default_username_password/
+
+Serach the make and model of your router on that website. You can also check if it's 
+physically written onto the back of your router on a sticker.
+ 
+
+Once you've logged into the router from your browser, look around to see if you can find
+a list of all of the address of all of the devices on your network. It may looks something like:
+
+192.168.0.3
+
+192.168.0.16
+
+192.168.0.22
+
+192.168.0.23
+
+
+The bad news is that the router may not say which address is which. One of this is your Pi (if
+you've conected it before and it knows your WiFi password). So you'll just have to try typing 
+each of them into your SSH application until one of them connects. Have fun with that.
+
+##
+
+Oh noes! I've never connected my Pi to this network so it won't know my password and won't connect!
+
+##
+
+Sorry but you're going to need a HDMI cable the first time you connect. I suppose you could get into
+it from somewhere where you can connect, then add that other network and password. But if it's the
+first time you start up your pi, you're going to need a HDMI cable connection. 
+
+
+
+
+
+#########################################################################
+
+   Once you've logged in through a Secure Shell (ssh), it's desktop time!
+
+#########################################################################
+
+You need to install a program on your pi called tightVNC. This is a remote desktop application. To install it, open the terminal and type this: (you can also copy paste. To do so, select the text below, then in ther terminal, middle click with the mouse)
+
+
+
+sudo apt-get update
+
+
+
+sudo apt-get install tightvncserver
+
+
+
+
+You will be asked to set a password. The default password we will use for each pi is:
+
+
+
+passpi1
+
+
+
+For the second school raspberry pi, the number changes so it'll be
+
+
+
+passpi2
+
+
+
+
+and so on and so forth for the third and following raspberry pi's will be passpi3 etc
+
+
+A remote desktop needs to be turned on at both ends:
+
+
+1. In your Raspberry pi, someone needs to start a VNC server. To do this they type in terminal:
+
+vncserver :1
+
+This sets up a remote desktop on port number 1.
+
+
+2. on your PC, Phone or ipad, you can now connect to that server that's been setup on your pi.
+
+
+- On a PC, you can download tightvnc. You can find it here:
+http://www.tightvnc.com/
+
+- On an ipad, you can download the appVNC Viewer (free).
+
+- On an android, you can dowload whatever VNC viewer you can find (let me know, it's late
+and I can't be bothered going to see what works on my android phone right now. Google something with
+VNC in it. Email me if you get it working so I can add it here. Dcuish@gmail.com)
+
+
+No matter what you use, you'll need to type the IP address of your pi with the port added in with
+a colon. For example:
+
+192.168.1.12:1
+
+##
+Wooooah hang on! What's with that :1 at the end?
+##
+
+
+Rememeber we typed "vncserver :1" ? 
+
+That started the server on port number 1. When you type an ip address, you can add the
+port at the end by putting in a : and a port number. This is something that took me ages to
+figure out. 
+
+Some VNC apps might have a seperate port number box and you can type the port number there
+instead.
+
+
+#########################################################################################
+
+To install the Pibrella purple board that allows you to control motors, lights & buzzers
+
+#########################################################################################
+
+
+For more go to
+http://pibrella.com/#setup
+
+Type the following into LX Terminal:
+
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+
+When asked (y/n) type "y" to go ahead with the 200MB update.
+
+
+**This update can take up to 40mnis! Go get a sandwich**
+
+
+
+sudo apt-get install python-pip
+
+sudo pip install pibrella
+
+
+
+
+#################################################################################################
+
+Making VNC server start automatically on startup (you can skip this if you want, it's not needed)
+
+#################################################################################################
+
+The following is copy pasta from adafruit.
+You can find the source webpage here:
+
+https://learn.adafruit.com/adafruit-raspberry-pi-lesson-7-remote-control-with-vnc/running-vncserver-at-startup
+
+
+Connecting to your Raspberry Pi remotely with VNC is fine as long as your Pi does not reboot. 
+If it does, then you either have to connect with SSH and restart the VNC Server or arrange for
+ the VNC Server to run automatically after the Raspberry Pi reboots.
+
+There are several different methods of arranging for some code to be run as the Pi starts.
+ The method described below is probably the easiest to use. You can adapt it to run other 
+commands instead of starting the VNC server.
+
+
+##Step 1.
+
+Open a Terminal session on the Pi, or connect using SSH. A new terminal or SSH session will automatically start you off in your home directory of /home/pi. If you are not in this directory, change to it by typing:
+Copy Code
+
+cd /home/pi
+
+Then cd to the .config directory by typing:
+
+cd .config
+
+Note the '.' at the start of the folder name. This makes it a hidden folder that will not 
+show up when you type 'ls'.
+
+
+
+##Step 2.
+Issue the command below to create a new directory inside .config called 'autostart'.
+
+
+mkdir autostart
+
+
+cd into that new directory by typing:
+
+
+cd autostart
+
+
+
+
+##Step 3.
+
+All that remains is to edit a new configuration file. 
+So type the following command to open the nano editor on the new file:
+
+
+nano tightvnc.desktop
+
+
+
+Edit the contents of the file with the following text.
+
+
+[Desktop Entry]
+Type=Application
+Name=TightVNC
+Exec=vncserver :1
+StartupNotify=false
+
+Type ctrl-X and then Y to save the changes to the file.
+
+Thats all there is to it. The next time you reboot the VNC server 
+will restart automatically.
+
+
+

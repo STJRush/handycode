@@ -1,0 +1,164 @@
+   _____ _             _                                _ _       
+  / ____| |           | |                              (_) |      
+ | (___ | |_ __ _ _ __| |_ _   _ _ __   _ __ ___   __ _ _| |_   _ 
+  \___ \| __/ _` | '__| __| | | | '_ \ | '_ ` _ \ / _` | | | | | |
+  ____) | || (_| | |  | |_| |_| | |_) || | | | | | (_| | | | |_| |
+ |_____/ \__\__,_|_|   \__|\__,_| .__/ |_| |_| |_|\__,_|_|_|\__, |
+                                | |______                    __/ |
+                                |_|______|                  |___/ 
+
+
+							by D.Murray
+
+
+
+For a nicer explanation of how to run a startup script:
+
+Go to: http://www.raspberry-projects.com/pi/pi-operating-systems/raspbian/auto-running-programs
+
+
+##########################################################################################################
+
+Before you start! Your google mail must have "less secure apps enabled"
+
+So basically google "less secure apps enabled" and it will take to you an explanation of what that is
+ in the first or second search result. During this text, you';; be shown a link to the setttings for this.
+If you're logged in, it'll take you to this ON/OFF switch. Once directed to this page, select ON to enable
+less secure apps.
+
+I reckon you should do this with not your own gmail account.
+
+
+##########################################################################################################
+
+
+Right so first go into that script, let's called mine "Startup_maily.py". You should edit it so that it has
+YOUR OWN gmail address and not mine. I don't want your all your IP addresses thanks very much! Do not use your actual gmail
+account as this script is super super NOT secure. Anyone can see your password. It's clearly spelt out in the file
+in plain english. I suggest you do as I have done and setup a low security single purpose gmail account with an easy
+password just to recieve these notifcications and keep your own gmail unlinked with a different password.
+
+
+
+
+Right click the "Startup_maily.py" and open the file with IDLE or leafpad.
+
+Find "Login" and "password" and change this to your own.
+
+Save the file in your home pi folder(/home/pi). You don't have to but it makes it easier to find.
+
+
+
+
+Okay so first check if it works without booting, as in it works when you run it.
+
+
+Go into your terminal.
+
+
+You need to check that it's ready too cook and prepare it if it's not. Type:
+
+
+
+ls
+
+
+
+This gives you a (L)i(s)t of things in the home folder.
+
+Hey is the file green on the list? If it's not, then you need to chmod it.
+
+So if the name of the file is "Startup_maily.py", compile that dude by typing
+
+
+
+chmod +x Startup_maily.py
+
+
+
+Wow that appears to do nothing. OR DOES IT? Again, type:
+
+
+
+ls
+
+
+
+And voila, your "Startup_maily.py" is now green and ready to be run.
+
+
+
+
+So to run it, just type:
+
+
+Sudo python Startup_maily.py
+
+
+
+Now check your gmail. You should have one email from you pi!
+
+Make sure your check your're getting the mail before going on to autostart below. You should get the
+email every time you run the script.
+
+
+##########################################################################################################
+
+
+Running the mailer on boot:
+
+
+
+##########################################################################################################
+
+Type:
+
+
+UPDATED METHOD FOR PIXEL NEW PI: 12 03 17
+
+If you want a script to run when you boot into the LXDE environment...
+
+Navigate to the LXDE folder. Type:
+
+cd ~/.config/lxsession/LXDE-pi
+
+
+Open the autostart file in that folder. Type:
+
+sudo nano autostart
+
+On the last line, enter in the location of your maily startup python script.
+
+@sudo python Startup_maily.py
+
+Type Ctrl+O  to save.
+
+Type Ctrl+X  to exit. 
+
+Type sudo reboot to restart and check if it works.
+
+#############################################
+
+OLD METHOD THAT USED TO WORK WITH OLDER PI:
+
+sudo nano /etc/rc.local
+ 
+
+After the initial comments (lines beginning with '#') add the following lines:
+
+
+# Auto run our application
+sudo python /home/pi/Startup_maily.py &
+
+
+
+"sudo" assumes you want your application run with root user privileges (remove if not) and the "&" says do it in the background.
+
+Save it by pressing Ctrl+X, " Y", ENTER
+
+Re-boot your RPi and it will run.
+
+
+
+Have an excellent day.
+

@@ -1,0 +1,65 @@
+
+##Update & Remote Desktop Install
+
+Hostname -I
+
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+
+
+sudo apt-get install tightvncserver
+
+
+vncserver :1
+
+
+
+
+
+## Remote Desktop Auto Start on Boot
+
+cd /home/pi
+
+cd .config
+
+
+
+mkdir autostart
+
+cd autostart
+
+
+nano tightvnc.desktop
+
+
+Edit the contents of the file with the following text.
+
+
+[Desktop Entry]
+Type=Application
+Name=TightVNC
+Exec=vncserver :1
+StartupNotify=false
+
+Type ctrl-X and then Y to save the changes to the file.
+
+
+
+## Pibrella & Python Update Install
+
+
+sudo apt-get install python-pip
+
+sudo pip install pibrella
+
+
+## Gmail me my ip address
+
+
+//need to paste this in from my old Rpi
+
+#the code below allows you to hold a key to eg. drive a car forward (without having to press enter)
+sudo pip install readchar    
