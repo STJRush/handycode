@@ -7,7 +7,7 @@ from firebase import firebase
 firebase = firebase.FirebaseApplication('https://rpitempdata.firebaseio.com', None)
 
 while True:
-    humid, temp = DHT.read_retry(DHT.DHT11, 4)
+    humid, temp = DHT.read_retry(DHT.DHT11, 4) #On GPIO Pin 4
 
     print("Let's start with getting python to read from the sensor..")
     print("humidity is", humid)
