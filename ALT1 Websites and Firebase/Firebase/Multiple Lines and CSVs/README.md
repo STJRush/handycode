@@ -2,19 +2,19 @@
 
 It's cool! You know this. They're the same as Names and Values. Like:
 
-<i>Name : Value</i>
+    <i>Name : Value</i>
 
-DannysAge : 99
+    DannysAge : 99
 
-BennysAge : 101
+    BennysAge : 101
 
 
 And from for example... a firebase database for your sensor
 
 
-Temperature : 23      # Temperature is the Key, 23 is the value
+    Temperature : 23      # Temperature is the Key, 23 is the value
 
-Temperature : 24      # Temperature is the Key, 24 is the value
+    Temperature : 24      # Temperature is the Key, 24 is the value
 
 Python has a data type that's not a list or integer called a dictionary.
 This is basically a database just like Firebase or a csv file.
