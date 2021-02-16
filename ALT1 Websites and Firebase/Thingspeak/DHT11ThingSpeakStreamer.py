@@ -37,16 +37,3 @@ updateThingSpeak()
 
 
 
-
-
-
-
-while True:
-    
-
-    print("Let's start with getting python to read from the sensor..")
-    print("humidity is", humid)
-    print("temperature is", temp)
-
-    
-
