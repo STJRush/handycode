@@ -18,14 +18,13 @@ def updateThingSpeak():
            humid, temp = DHT.read_retry(DHT.DHT11, 4) #On GPIO Pin 4
            print("Humidity is ", humid, "Temperature is ", temp) 
             
-           f = urlopen(baseURL + "&field1=%s" % (temp) + "&field2=%s" % (humid) ) 
-           print (f.read()) 
+           f = urlopen(baseURL + "&field1=%s" % (temp)) 
+           
+print (f.read()) 
            f.close() 
            sleep(10) #uploads sensor values every 5 minutes
-          
-
-           humid, temp = DHT.read_retry(DHT11, 4) 
-           f = urlopen(baseURL + "&field3=%s" % (humid)) 
+           
+           f = urlopen(baseURL + "&field2=%s" % (humid)) 
            print (f.read()) 
            f.close() 
            sleep(10)
