@@ -32,48 +32,45 @@ def updateThingSpeak():
 
            for x in range(15):
 
+                # pre-sets these to zero in case the sensor fails to work and they break things later by being unassigned values
                 temp = 0
                 humid = 0
 
-               
+                # waits 5 secs before and after measurment to give that cheap sensor some time to work
                 sleep(5)
                 humid, temp = DHT.read_retry(DHT.DHT11, 4) #On GPIO Pin 4
                 sleep(5)
-                # print("Humidity is ", humid, "Temperature is ", temp)
+                
+                # debug print statment
+                # print("Humidity is ", humid, "Temperature is ", temp)  
 
 
-                if humid != None and temp !=None and humid != 0 and temp != 0 :     #this checks that niether read None
+                if humid != None and temp !=None and humid != 0 and temp != 0 :     #this checks that neither read None
                   listyMcTemps.append(temp)
                   listyMcHumids.append(humid)
-                  # print("Cool. Added that to the list")
                 
                 else:
                    print("Ah craps, the sensor had a moment. Don't count that one!")
                    
 
-                #  Yes, it's bad that there's a lot of try except below but DHT11 sensors are very hit and miss
-                #  Also, I'm tired. 
+                #  Yes, it's bad that there's a lot of try excepts below but DHT11 sensors are very hit and miss
+                #  Also, I'm tired and can't come up with a proper if else
                 
                 try:
-
-                  modeTemp = statistics.mode(listyMcTemps)
-
+                  modeTemp = statistics.mode(listyMcTemps) # get the mode of the list
                 except:
-                  modeTemp = temp
-
+                  modeTemp = temp # if there is no unique mode, set it to the most recent value
                    
                 try:
-
-                  modeHumid = statistics.mode(listyMcHumids)
-
+                  modeHumid = statistics.mode(listyMcHumids) # get the mode of the list
                 except:
-                  modeHumid = humid
+                  modeHumid = humid  # if there is no unique mode, set it to the most recent value
 
 
            print("Temperatures so far are...")
            print(listyMcTemps)
 
-           print("The humid values so far are...")
+           print("The humidity values so far are...")
            print(listyMcHumids)
 
            print("Most common (mode) Temp in the last 15 readings is ", modeTemp)
@@ -82,12 +79,12 @@ def updateThingSpeak():
            
            # uploads data to thingspeak here. You can change fields 1&2 to 3&4 if you've multiple sensors running.
            f = urlopen(baseURL + "&field1=%s" % (modeTemp) + "&field2=%s" % (modeHumid) ) 
-           print (f.read()) 
+           print ("Successfully uploaded data point ", f.read()) 
            f.close()
            
-           print('Will wait another 10 minutes before uploading more data to thingspeak...") 
+           print("Now waiting another 10 minutes before uploading more data to thingspeak...") 
            sleep(600) #uploads sensor values every 10 minutes
-          
+           print("")
                   
 updateThingSpeak()
 
