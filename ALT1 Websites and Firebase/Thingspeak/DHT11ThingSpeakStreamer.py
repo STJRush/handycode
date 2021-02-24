@@ -23,12 +23,6 @@ def updateThingSpeak():
            f.close() 
            sleep(10) #uploads sensor values every 5 minutes
           
-
-           humid, temp = DHT.read_retry(DHT11, 4) 
-           f = urlopen(baseURL + "&field3=%s" % (humid)) 
-           print (f.read()) 
-           f.close() 
-           sleep(10)
            
        except: 
            print('Ooops... lets try again...') 
