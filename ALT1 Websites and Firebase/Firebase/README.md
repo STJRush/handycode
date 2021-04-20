@@ -7,7 +7,7 @@ Things like RPi InternalTemp_write_to_csv.py or the DHT example need to Raspberr
 
 If want to pull down 100 points of temperture data from firebase into a csv for you to analyze, you should open the folder called "Multiple Lines and CSVs".
 
-## THE METHOD OF NON MADNESS FOR FIREBASE
+## THE METHOD OF NON-MADNESS FOR FIREBASE
 
 This will ensure that you're only ever 1 bug away from working, not two.
 
