@@ -36,7 +36,11 @@ In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it.
   
 
 # STEP 3:
-Change the firebase URL from my one to your one and run the code again. Now you should see a bunch of simulated data in your realtime database. Now things are really working!
+Change the firebase URL (https://cookietest-a4f79.firebaseio.com) from my one here to your one which you can find on your firebase dashboard and run the code again. Now you should see a bunch of simulated data in your realtime database. Now things are really working!
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
+
 
 # STEP 4:
 Replace my code with the code from your project that generates your own data etc.
