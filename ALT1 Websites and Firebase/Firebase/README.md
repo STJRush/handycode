@@ -25,7 +25,7 @@ https://docs.google.com/document/d/11mXCblg5Osas-MobqXqqu5gvMX5BdV-sG4j6_8Osugg/
 
 In Thonny, go into [Tools > Manage Packages] and search for <b>python-firebase</b> . Click install.
 
-In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is working which is important the next bit.
+In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it. This will make sim data in my repo which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is working which is important the next bit.
 
     Tips:
 
@@ -38,7 +38,7 @@ In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it.
 # STEP 3:
 Change the firebase URL (https://cookietest-a4f79.firebaseio.com) from my one here to your one which you can find on your firebase dashboard and run the code again. Now you should see a bunch of simulated data in your realtime database. Now things are really working!
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Firebasesessss](https://github.com/STJRush/handycode/blob/master/ALT1%20Websites%20and%20Firebase/Firebase/firebasetips.PNG)
 
 
 
