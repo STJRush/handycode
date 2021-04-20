@@ -29,5 +29,8 @@ Change the firebase URL from my one to your one and run the code again. Now you 
 # STEP 4:
 Replace my code with the code from your project that generates your own data etc.
 
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
+
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o8UChpqV8Ow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
