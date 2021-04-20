@@ -30,6 +30,8 @@ In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it.
     Tips:
 
     - In thonny make sure you've imported the package python-firebase and installed it. NOT I REPEAT NOT one called firebase. It's python-firebase.
+    - If you get an async error, you need to watch the video below which has instructions on how to fix it
+    - If you're other errors on your Raspberry Pi try running sudo apt-get update and sudo apt-get upgrade on you Pi's terminal.
   
   
 
