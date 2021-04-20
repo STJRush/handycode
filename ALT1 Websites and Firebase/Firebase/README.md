@@ -15,7 +15,7 @@ This will ensure that you're only ever 1 bug away from working, not two.
 SET UP YOUR FIREBASE ACCOUNT IN TEST MODE
 
 # STEP 2: 
-In handycode, copy paste the file simDataToFirebase.py into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is woroking which is important the next bit.
+In handycode, copy paste the file simDataToFirebase.py into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is working which is important the next bit.
 
     Tips:
 
@@ -29,8 +29,5 @@ Change the firebase URL from my one to your one and run the code again. Now you 
 # STEP 4:
 Replace my code with the code from your project that generates your own data etc.
 
-[![Watch the video](https://lh3.googleusercontent.com/proxy/8bHpJERKz6suTVBLn5QBYW8lGaBHmqsGgsQhoRmQogEWrW9oGVhljGyP4mzNUmnAOMTZPmnq2R6BCR2i0cv-WiKv6wJWofpijlB-t4HfWENGmnXkTjYHlOEIQbYiBShFG6iWo0jQtw2AettRXFs)](https://www.youtube.com/embed/o8UChpqV8Ow)
+[![If you get stuck, there's a video of Firebase Errors here:](https://lh3.googleusercontent.com/proxy/8bHpJERKz6suTVBLn5QBYW8lGaBHmqsGgsQhoRmQogEWrW9oGVhljGyP4mzNUmnAOMTZPmnq2R6BCR2i0cv-WiKv6wJWofpijlB-t4HfWENGmnXkTjYHlOEIQbYiBShFG6iWo0jQtw2AettRXFs)](https://www.youtube.com/embed/o8UChpqV8Ow)
 
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o8UChpqV8Ow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
