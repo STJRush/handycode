@@ -11,10 +11,10 @@ If want to pull down 100 points of temperture data from firebase into a csv for 
 
 This will ensure that you're only ever 1 bug away from working, not two.
 
-#STEP 1: 
+# STEP 1: 
 SET UP YOUR FIREBASE ACCOUNT IN TEST MODE
 
-#STEP 2: 
+# STEP 2: 
 In handycode, copy paste the file simDataToFirebase.py into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is woroking which is important the next bit.
 
     Tips:
@@ -23,8 +23,8 @@ In handycode, copy paste the file simDataToFirebase.py into Thonny and run it. T
   
   
 
-#STEP 3:
+# STEP 3:
 Change the firebase URL from my one to your one and run the code again. Now you should see a bunch of simulated data in your realtime database. Now things are really working!
 
-#STEP 4:
+# STEP 4:
 Replace my code with the code from your project that generates your own data etc.
