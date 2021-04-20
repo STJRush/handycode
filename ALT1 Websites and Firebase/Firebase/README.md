@@ -29,7 +29,7 @@ Change the firebase URL from my one to your one and run the code again. Now you 
 # STEP 4:
 Replace my code with the code from your project that generates your own data etc.
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/o8UChpqV8Ow)
+[![Watch the video](https://lh3.googleusercontent.com/proxy/8bHpJERKz6suTVBLn5QBYW8lGaBHmqsGgsQhoRmQogEWrW9oGVhljGyP4mzNUmnAOMTZPmnq2R6BCR2i0cv-WiKv6wJWofpijlB-t4HfWENGmnXkTjYHlOEIQbYiBShFG6iWo0jQtw2AettRXFs)](https://www.youtube.com/embed/o8UChpqV8Ow)
 
 
 
