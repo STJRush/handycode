@@ -14,8 +14,18 @@ This will ensure that you're only ever 1 bug away from working, not two.
 # STEP 1: 
 SET UP YOUR FIREBASE ACCOUNT IN TEST MODE
 
+-Sign up with your google account
+-Create a Realtime Database
+-Set it to test mode
+
+If you're stuck... here's a blog post I wrote the first time I setup firebase and got it running
+https://docs.google.com/document/d/11mXCblg5Osas-MobqXqqu5gvMX5BdV-sG4j6_8Osugg/edit#heading=h.roclnu7xe40s
+
 # STEP 2: 
-In handycode, copy paste the file simDataToFirebase.py into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is working which is important the next bit.
+
+In Thonny, go into [Tools > Manage Packages] and search for <b>python-firebase</b> . Click install.
+
+In handycode, copy paste the file "simDataToFirebase.py" into Thonny and run it. This will make sim data in my reposoitory which you can't see BUTUUUUUUUTT if you get no errors, very importly. your firebase and thonny is working which is important the next bit.
 
     Tips:
 
