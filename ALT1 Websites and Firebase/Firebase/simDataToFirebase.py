@@ -20,3 +20,22 @@ for x in range(10): # repeat the code below 10 times
     sleep(1)
     print("Sent random temp to firebase", x+1 , " of 10")
     sleep(1)
+    
+    
+ """
+ One issue with this code is that it generates unique identifiers for each datapoint.
+ That's kind of annoying. There's a tidy version of this code in this same folder in the repository 
+    
+-MPjzXK7pqANMr586Z2w
+-MW94W9aNYK6-QxyF-Wy
+-MW94Wt3uOIP_GTrnzn9
+SimHumid: 
+58
+SimTemp: 
+21
+-MW94X_ov2K0f3O-nGUJ
+-MW94YH_4D-AelrQ0rkH
+-MW94YzJk3tqNw87vL32
+    
+    
+"""
