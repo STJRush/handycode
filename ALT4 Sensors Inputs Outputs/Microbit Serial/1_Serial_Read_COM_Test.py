@@ -19,6 +19,9 @@ ser.baudrate = 115200
 # So seeing as python gets it's name from Monty Python, that's what I did. I tried each one.
 # COM10 didn't work but COM12 did. So try COMwhateverYouSeeOnDeviceManager
 ser.port = "COM12" 
+
+
+
 print("Type CTRL + C to exit. (may take 5 seconds)")
 
 ser.open()
