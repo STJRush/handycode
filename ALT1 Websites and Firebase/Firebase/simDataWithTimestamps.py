@@ -6,7 +6,7 @@ from datetime import datetime,date, timedelta
 firebase = firebase.FirebaseApplication('https://cookietest-a4f79.firebaseio.com', None)
 
 
-now = datetime.now()
+now = datetime.now() #gets the date & time from your computer right now
 
 print("The full datetime object from the computer is", now)
 
@@ -46,18 +46,19 @@ print("seconds:", secsNow)
 print("\n Normally, a datapoint will be like 'Temperature:23' but instead of the name Temperature,")
 print("we'll use now.strftime('%H:%M:%S') as the name of the data point which is the time now. \n" )
 
-for x in range(8): # repeat the code below 8 times representing 8 hours
+for count in range(8): # repeat the code below 8 times representing 8 hours
 
     simulated_people = random.randint(0,30)  # makes up a random number of people
     
-    now = datetime.now()
+    now = datetime.now() #gets the date & time from your computer right now each time
     
-    # It's (demHours + 1) because otherwise there'd be a data point called Hour 0. ZeroHour sounds cool. But no.
+    # patches up the firebase the Name (time right now) : The value which is a random number from 1-30
     data = firebase.patch('/someRandoSimPeopleTimes/' , {now.strftime("%H:%M:%S"): simulated_people})
     print(data)
     
     sleep(1)
-    print("Sent random data & real timestamps to firebase", x+1 , " of 8")
+    # It's count + 1 because computers start counting at 0 and humans start counting from 1
+    print("Sent random data & real timestamps to firebase", count+1 , " of 8")
     sleep(1)
 
 
