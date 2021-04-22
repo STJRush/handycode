@@ -1,7 +1,7 @@
 from firebase import firebase
 import random
 from time import sleep
-from datetime import datetime,date, timedelta
+from datetime import datetime
 
 firebase = firebase.FirebaseApplication('https://cookietest-a4f79.firebaseio.com', None)
 
