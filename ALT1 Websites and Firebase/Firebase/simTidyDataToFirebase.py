@@ -10,7 +10,6 @@ firebase = firebase.FirebaseApplication('https://cookietest-a4f79.firebaseio.com
 for dataPointNumber in range(10): #repeat the code below 10 times
 
     simulated_temperature = random.randint(18,21)
-    simulated_humidity = random.randint(55,59)
 
     #POSTS  to the database (POST means create an entry, does generate a nasty long node name)
     data = firebase.patch('/moOOARsimData/' , {'Reading' + str(dataPointNumber): simulated_temperature})
