@@ -34,7 +34,7 @@ try:
         print("Reading")
         print(microbitData)
 
-except:
+except KeyboardInterrupt:
     print("\n Safely closing serial connection")
     ser.close()
     print("Done! Seeya later!")
