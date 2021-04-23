@@ -1,11 +1,7 @@
 # handycode
 
 
-This is a place for really small pieces of code to help you do cool stuff with python.
-
-Click "create file" and add things you think are handy to know. This will be approved by pull request.
-
-**This is a teaching resource so code snippets must be super short and packed full of juicy #comments (one per line).**
+This is where Danny Murray writes code that might come in handy later. There's stuff from the DCUISH youtube videos here and stuff for Leaving Cert Computer Science lessons.
 
 
 
@@ -15,7 +11,7 @@ Click "create file" and add things you think are handy to know. This will be app
               a8888b.                
              d888888b.                  
              8P"YP"Y88                      
-             8|o||o|88     Tux likes #COMMENTS                  
+             8|o||o|88     "Savage Cabbage Lads"               
              8'    .88                   
              8`._.' Y8.                     
             d/      `8b.                    
