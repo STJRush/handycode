@@ -1,9 +1,11 @@
 """
-This program uploads two fake variables to ThingSpeak every 10 seconds.
+This program uploads two fake variables to ThingSpeak every 20 seconds.
 1. Get this program to run correctly
 2. Try it with your own Thingspeak Channel
 3. On a Raspberry Pi, try streaming the current CPU Temperature. You can find this code here:
 https://raw.githubusercontent.com/STJRush/handycode/master/ALT4%20Sensors%20Inputs%20Outputs/Raspberry%20PI%20Sensors/CPU_Temperature_Measure_Simple.py
+
+On the free version of ThingSpeak you can only send data every 15 seconds.
 
 """
 
@@ -29,8 +31,8 @@ fakeHumidityMeasurement = 99
 
 while True:
     updateThingSpeak()
-    print("Now waiting another 10 seconds before uploading more data to thingspeak...") 
-    sleep(10)
+    print("Now waiting another 20 seconds before uploading more data to thingspeak...") 
+    sleep(20)
     print("")
 
 
