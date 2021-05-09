@@ -7,18 +7,24 @@ pygame.init()
 gameDisplay = pygame.display.set_mode((800,600))
 
 #loads in your pics to use later
-pokeScreen1 = pygame.image.load('village.PNG')
-garyImg = pygame.image.load('gary.png')
+castleBackground = pygame.image.load('castleFile.jpg')
+
+mapPinIcon = pygame.image.load('pinFile.png')
 
 #DISPLAY BACKGROUND
-gameDisplay.blit(pokeScreen1, (80,80))
+gameDisplay.blit(castleBackground, (0,0))
 pygame.display.update()
-sleep(2)
+sleep(1)
 
-#DISPLAY GARY
-gameDisplay.blit(garyImg, (0,0))
+#DISPLAY YOU ARE HERE
+gameDisplay.blit(mapPinIcon, (150,10))
 pygame.display.update()
-sleep(2)
+sleep(5)
+
+#GAME WILL NOW EXIT UNLESS YOU LOOP IT OR ADD AN input
 
 pygame.quit()
 quit()
+
+
+# Find maps at https://www.reddit.com/r/battlemaps/top/?t=all
