@@ -29,3 +29,16 @@ I'll paste the code below. All this you install by typing it into the terminal:
   Then I was able to START following this tutorial here:
   
  https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/
+ 
+ 
+ 
+ Ball Tracking Tutorial
+ I used this one here
+https://www.instructables.com/Automatic-Vision-Object-Tracking/
+
+That also told me that I needed to install another module in the terminal 
+
+
+     pip install imutils
+     
+If you're skimming that tutorial, watch out, I got an error in one part where it was looking for a Yellow_Object.JPG and you had to have such a picture in the same folder as your python file. I just right clickedf on the image on his tutorial and used that.
