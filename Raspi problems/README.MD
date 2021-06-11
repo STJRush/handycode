@@ -6,8 +6,8 @@ If you clock is stuck behind, in the terminal enter these lines one at a time
     timedatectl status
   
   
-## Windows snapping closed
+## Windows snapping closed and or chrome all messed up into nonsenical tiles
 
 In the terminal type 
 
-    sudo apt-get full-upgrade
+    sudo apt-get install --reinstall pcmanfm
