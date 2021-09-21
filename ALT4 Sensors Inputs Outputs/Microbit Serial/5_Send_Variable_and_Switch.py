@@ -1,5 +1,3 @@
-# Send Variable and Switch State
-
 def on_button_pressed_a():
     global switch_position
     switch_position = 0
@@ -18,7 +16,6 @@ serial.redirect_to_usb()
 def on_forever():
     basic.show_number(input.temperature())
     serial.write_line("" + str((input.temperature())))
-    serial.write_line("")
     serial.write_line("" + str((switch_position)))
-    serial.write_line("")
+    basic.pause(1000)
 basic.forever(on_forever)
