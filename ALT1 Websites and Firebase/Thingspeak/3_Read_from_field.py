@@ -1,4 +1,5 @@
 # This program reads data from Thingspeak
+# No password is needed to read public channels so you'l note the API is missing.
 
 import requests
 
