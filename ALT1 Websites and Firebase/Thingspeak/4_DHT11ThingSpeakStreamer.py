@@ -1,3 +1,5 @@
+# This program reads from a DHT11 Temp Humidity sensor on a Raspberry Pi plugged into GPIO4 and sends it to thingspeak. 
+
 import sys 
 from time import sleep 
 from urllib.request import urlopen
