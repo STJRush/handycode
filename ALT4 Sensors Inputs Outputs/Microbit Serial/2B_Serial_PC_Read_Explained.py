@@ -1,4 +1,7 @@
 
+# This program takes a variable (temperature here but could be any serial data) from a microbit and brings it into Thonny. 
+# USB Serial data comes with lots of junk text like \\r\\n so most of this program is for cleaning those parts away leaving just the variable we want.
+
 import serial
 from time import sleep
 
