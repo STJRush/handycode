@@ -21,13 +21,18 @@ ser.open()
 computerPoints = 0
 playerPoints = 0
 
-playerRockCounter = 1
-playerScissorsCounter = 1
-playerPaperCounter = 1
+# must be one
+playerRockCounter = 0
+playerScissorsCounter = 0
+playerPaperCounter = 0
 
-computerRockCounter = 1
-computerScissorsCounter = 1
-computerPaperCounter = 1
+computerRockCounter = 0
+computerScissorsCounter = 0
+computerPaperCounter = 0
+
+playerRockCountSnapshot=0
+playerScissorsCountSnapshot=0
+playerPaperCountSnapshot=0
 
 
 computerPastGuessList = []
@@ -72,10 +77,10 @@ try:
             #cpuGuess = choice(listyMacListFace)
             
             # mimic the player:
-            cpuGuess=(random.choices(listyMacListFace, weights=(playerRockCounter**2, playerPaperCounter**2, playerScissorsCounter**2), k=1))[0]
-            
-            
-            print("The computer goes for", cpuGuess)
+            cpuGuessList=(random.choices(listyMacListFace, weights=((playerRockCountSnapshot+1)**2, (playerPaperCountSnapshot+1)**2, (playerScissorsCountSnapshot+1)**2), k=20))
+            print(cpuGuessList)
+            cpuGuess=cpuGuessList[0]
+            print("The computer goes for", "rock")
             
             # all draws
             if playerGuess == cpuGuess:
@@ -145,9 +150,13 @@ try:
             bar_chart.render_to_file('player_guesses.svg') 
             
 
-            playerRockCounter = 1
-            playerScissorsCounter = 1
-            playerPaperCounter = 1
+            playerRockCounter = playerRockCountSnapshot
+            playerScissorsCounter = playerScissorsCountSnapshot
+            playerPaperCounter = playerPaperCountSnapshot
+
+            playerRockCounter = 0
+            playerScissorsCounter = 0
+            playerPaperCounter = 0
             
             # count how many rocks, scissors, paper the COMPUTER chooses
             for guess in computerPastGuessList:
@@ -176,11 +185,11 @@ try:
             bar_chart.add('Rock', computerRockCounter)
             bar_chart.add('Paper', computerPaperCounter)
             bar_chart.add('Scissors', computerScissorsCounter)
-            bar_chart.render_to_file('computer_guesses.svg') 
+            bar_chart.render_to_file('computer_guesses.svg')        
 
-            computerRockCounter = 1
-            computerScissorsCounter = 1
-            computerPaperCounter = 1  
+            computerRockCounter = 0
+            computerScissorsCounter = 0
+            computerPaperCounter = 0  
             
             sleep(2)
         # Except don't try read blank numbers. Pass them by.
