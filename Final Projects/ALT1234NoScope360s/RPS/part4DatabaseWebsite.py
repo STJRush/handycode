@@ -4,8 +4,8 @@
 
 import serial
 from time import sleep
-from random import choice
-
+import pygal
+from random import choices
 
 
 ser = serial.Serial()
@@ -20,6 +20,7 @@ ser.open()
 computerPoints = 0
 playerPoints = 0
 
+# must be one
 playerRockCounter = 0
 playerScissorsCounter = 0
 playerPaperCounter = 0
@@ -27,6 +28,11 @@ playerPaperCounter = 0
 computerRockCounter = 0
 computerScissorsCounter = 0
 computerPaperCounter = 0
+
+#NEW#  Declare these
+playerRockCountSnapshot=0
+playerScissorsCountSnapshot=0
+playerPaperCountSnapshot=0
 
 
 computerPastGuessList = []
@@ -68,9 +74,25 @@ try:
             
             # Let the Computer Guess at random from 3 options
             listyMacListFace = ["rock", "paper", "scissors"]
-            cpuGuess = choice(listyMacListFace)
+            #cpuGuess = choice(listyMacListFace)
             
-            print("The computer goes for", cpuGuess)
+            #weigthtedGuesses=choices(nameOfList, weights=(1, 0, 100), k=10)
+            
+            # mimic the player with weighted choices
+            cpuGuessList=(choices(listyMacListFace, weights=((playerRockCountSnapshot+1), (playerPaperCountSnapshot+1), (playerScissorsCountSnapshot+1)), k=34))
+            cpuGuess=cpuGuessList[0]
+            
+
+            #NEW# now that you can mimic, switch to the opposite pattern to counter
+            if cpuGuess == "paper":
+                cpuGuess = "scissors"
+            elif cpuGuess == "scissors":
+                cpuGuess = "rock"
+            elif cpuGuess == "rock":
+                cpuGuess = "paper"
+
+            
+            print("The computer goes for", "rock")
             
             # all draws
             if playerGuess == cpuGuess:
@@ -107,11 +129,11 @@ try:
                 computerPoints = computerPoints + 1
                 
                         
-            
+            # add the guesses eg. rock, paper to a big past list of all their guesses
             computerPastGuessList.append(cpuGuess)
             playerPastGuessList.append(playerGuess)
             
-            # count how many rocks, scissors, paper the player chooses
+            # count how many rocks, scissors, paper the player has choosen
             for guess in playerPastGuessList:
                 
                 if guess == "rock":
@@ -128,8 +150,23 @@ try:
             print("                        R  P  S")
         
             print("To Graph for player  :", playerTotalsToGraph)
-              
+            playerTotalsToGraph.sort()
+            #print("The player's most common choice was guessed", playerTotalsToGraph[2], "of times")
+            
+            
+            # Graph Player Stuff
+            bar_chart = pygal.Bar(title=u'PLayer Guesses')                           
+            bar_chart.add('Rock', playerRockCounter)
+            bar_chart.add('Paper', playerPaperCounter)
+            bar_chart.add('Scissors', playerScissorsCounter)
+            bar_chart.render_to_file('player_guesses.svg') 
+            
+            #NEW# save a snapshot of the barchart scores before the couters are reset
+            playerRockCountSnapshot = playerRockCounter
+            playerScissorsCountSnapshot = playerScissorsCounter
+            playerPaperCountSnapshot = playerPaperCounter
 
+            # reset the counters to start count at 0 instead of counting 1,12,123,1234,12345
             playerRockCounter = 0
             playerScissorsCounter = 0
             playerPaperCounter = 0
@@ -148,8 +185,20 @@ try:
                     
                     
             computerTotalsToGraph = [computerRockCounter,computerPaperCounter,computerScissorsCounter]
+            
+        
         
             print("To Graph for computer:", computerTotalsToGraph)
+            computerTotalsToGraph.sort()
+            #print("The computer's most common choice was guessed", computerTotalsToGraph[2], "of times")
+            
+
+            # Graph Player Stuff
+            bar_chart = pygal.Bar(title=u'Computer Guesses')     
+            bar_chart.add('Rock', computerRockCounter)
+            bar_chart.add('Paper', computerPaperCounter)
+            bar_chart.add('Scissors', computerScissorsCounter)
+            bar_chart.render_to_file('computer_guesses.svg')        
 
             computerRockCounter = 0
             computerScissorsCounter = 0
