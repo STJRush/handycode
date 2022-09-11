@@ -4,9 +4,8 @@
 
 import serial
 from time import sleep
-from random import choice
 import pygal
-import random
+from random import choices
 
 
 ser = serial.Serial()
@@ -30,6 +29,7 @@ computerRockCounter = 0
 computerScissorsCounter = 0
 computerPaperCounter = 0
 
+#NEW#  Declare these
 playerRockCountSnapshot=0
 playerScissorsCountSnapshot=0
 playerPaperCountSnapshot=0
@@ -76,10 +76,22 @@ try:
             listyMacListFace = ["rock", "paper", "scissors"]
             #cpuGuess = choice(listyMacListFace)
             
-            # mimic the player:
-            cpuGuessList=(random.choices(listyMacListFace, weights=((playerRockCountSnapshot+1)**2, (playerPaperCountSnapshot+1)**2, (playerScissorsCountSnapshot+1)**2), k=20))
-            print(cpuGuessList)
+            #weigthtedGuesses=choices(nameOfList, weights=(1, 0, 100), k=10)
+            
+            # mimic the player with weighted choices
+            cpuGuessList=(choices(listyMacListFace, weights=((playerRockCountSnapshot+1), (playerPaperCountSnapshot+1), (playerScissorsCountSnapshot+1)), k=34))
             cpuGuess=cpuGuessList[0]
+            
+
+            #NEW# now that you can mimic, switch to the opposite pattern to counter
+            if cpuGuess == "paper":
+                cpuGuess = "scissors"
+            elif cpuGuess == "scissors":
+                cpuGuess = "rock"
+            elif cpuGuess == "rock":
+                cpuGuess = "paper"
+
+            
             print("The computer goes for", "rock")
             
             # all draws
@@ -117,11 +129,11 @@ try:
                 computerPoints = computerPoints + 1
                 
                         
-            
+            # add the guesses eg. rock, paper to a big past list of all their guesses
             computerPastGuessList.append(cpuGuess)
             playerPastGuessList.append(playerGuess)
             
-            # count how many rocks, scissors, paper the player chooses
+            # count how many rocks, scissors, paper the player has choosen
             for guess in playerPastGuessList:
                 
                 if guess == "rock":
@@ -149,11 +161,12 @@ try:
             bar_chart.add('Scissors', playerScissorsCounter)
             bar_chart.render_to_file('player_guesses.svg') 
             
+            #NEW# save a snapshot of the barchart scores before the couters are reset
+            playerRockCountSnapshot = playerRockCounter
+            playerScissorsCountSnapshot = playerScissorsCounter
+            playerPaperCountSnapshot = playerPaperCounter
 
-            playerRockCounter = playerRockCountSnapshot
-            playerScissorsCounter = playerScissorsCountSnapshot
-            playerPaperCounter = playerPaperCountSnapshot
-
+            # reset the counters to start count at 0 instead of counting 1,12,123,1234,12345
             playerRockCounter = 0
             playerScissorsCounter = 0
             playerPaperCounter = 0
