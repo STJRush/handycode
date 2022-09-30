@@ -5,13 +5,29 @@ import serial
 from time import sleep
 import pygal
 from random import choices
+import sys 
+from urllib.request import urlopen
+
+
 
 
 ser = serial.Serial()
 ser.baudrate = 115200
 ser.port = "COM7"
 
+myAPI = "JDB150GBC7UT6MG7"  #your key from your own thingspeak account. Put yours here.
+
 print("Type CTRL + C to exit. (may take 5 seconds)")
+
+
+def updateThingSpeak(): 
+   print('Now updating thingspeak') 
+   baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI    
+
+   f = urlopen(baseURL + "&field1=%s" % ("Danny") + "&field2=%s" % (finalScore) ) 
+   print ("Success! I uploaded data point No. ", f.read())
+   f.close()
+
 
 # Opens the packet of crunchie nut cornflakes
 ser.open()
@@ -213,6 +229,7 @@ try:
         
     finalScore = playerPoints - computerPoints
     print("Final Score is...", finalScore)
+    updateThingSpeak()
 
 except KeyboardInterrupt:
     
