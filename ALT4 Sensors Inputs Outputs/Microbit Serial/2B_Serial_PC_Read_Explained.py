@@ -1,5 +1,5 @@
 
-# This program takes a variable (temperature here but could be any serial data) from a microbit and brings it into Thonny. 
+# This program takes a variable (signal_in here but could be any serial data) from a microbit and brings it into Thonny. 
 # USB Serial data comes with lots of junk text like \\r\\n so most of this program is for cleaning those parts away leaving just the variable we want.
 
 import serial
@@ -7,7 +7,7 @@ from time import sleep
 
 ser = serial.Serial()
 ser.baudrate = 115200
-ser.port = "COM3"
+ser.port = "COM23"
 
 print("Type CTRL + C to exit. (may take 5 seconds)")
 
@@ -26,23 +26,22 @@ try:
             # First take in all the data and assign it to this variable
             microbitdata = str(ser.readline())
             
-            # Get second bit onwards, call that temperature
-            temperature = microbitdata[2:]
+            # Get second bit onwards, call that signal_in
+            signal_in = microbitdata[2:]
             
             # Remove any spaces
-            temperature = temperature.replace(" ","")
+            signal_in = signal_in.replace(" ","")
             
             # Remove any apostrophies
-            temperature = temperature.replace("'","")
+            signal_in = signal_in.replace("'","")
             
             # Replace this with nothing (remove it)
-            temperature = temperature.replace("\\r\\n","")
+            signal_in = signal_in.replace("\\r\\n","")
             
-            # Convert the string to an integer so we can do maths later.
-            temperature = int(temperature)
+
             
             # Print it to see if any of that rubbish above actually worked
-            print(temperature)
+            print(signal_in)
             
             # Take a break. You deserve it.
             sleep(3)
