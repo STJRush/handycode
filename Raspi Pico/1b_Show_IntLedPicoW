@@ -1,0 +1,6 @@
+# PicoW Version
+# Must install firmware from https://micropython.org/download/rp2-pico-w/
+import machine
+led = machine.Pin("LED", machine.Pin.OUT)
+led.off()
+led.on()
