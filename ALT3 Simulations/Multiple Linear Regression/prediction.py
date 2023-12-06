@@ -6,6 +6,7 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 # Load your dataset
+data = pd.read_csv('your_dataset.csv')
 
 # Define your independent variables (features) and dependent variable (target)
 X = data[['Hours_of_Direct_Sunlight', 'Average_Sunlight_Intensity']]
