@@ -4,9 +4,11 @@ import statistics
 import csv
 
 # opens the csv
-f = open("cleaned.csv", newline='')
+f = open("Survey_Results.csv", newline='')
 reader = csv.reader(f)
 
+#skip the first row as that's titles eg. Emotional. You can't get the average of words
+next(reader, None)
 
 # makes a list from the first column. The int() makes each string(word) from the text file into an integer(number)
 dataListedSeriesA = [int(column[1]) for column in reader]
