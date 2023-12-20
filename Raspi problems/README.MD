@@ -23,11 +23,28 @@ Install Python packages with apt where possible:
 
     sudo apt install python3-packagename
 
-Use a virtual environment where apt packages are not available:
+For example you would do:
 
+    sudo apt install python3-pandas
+
+Use a virtual environment where apt packages are not available:
 
     python -m venv --system-site-packages [path/to/venv]
     [path/to/venv]/bin/python -m pip install packagename
+
+
+Here's how I did this to install scikit-learn as that wasn't on apt
+
+Use this guide if you don't have the env folder
+https://www.raspberrypi.com/documentation/computers/os.html#python-on-raspberry-pi
+
+Open  terminal, use cd to navigate to directory of virtual env and then run
+
+    python -m venv --system-site-packages env
+
+From that same folder, open bin and run
+
+    python -m pip install scikit-learn
 
 ## Updating:
 
