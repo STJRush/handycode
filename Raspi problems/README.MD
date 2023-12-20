@@ -16,9 +16,9 @@ In the terminal type
 
 
 
-## To summarise bookworm installs:
+# To summarise bookworm installs:
 
-Installing:
+## Installing:
 Install Python packages with apt where possible:
 
     sudo apt install python3-packagename
@@ -26,14 +26,16 @@ Install Python packages with apt where possible:
 Use a virtual environment where apt packages are not available:
 
 
-python -m venv --system-site-packages [path/to/venv]
-[path/to/venv]/bin/python -m pip install packagename
-Updating:
+    python -m venv --system-site-packages [path/to/venv]
+    [path/to/venv]/bin/python -m pip install packagename
+
+## Updating:
+
 Update both system and virtual environment packages
 
 
-sudo apt update && sudo apt upgrade
-[path/to/venv]/bin/python -m pip install --upgrade packagename
+    sudo apt update && sudo apt upgrade
+    [path/to/venv]/bin/python -m pip install --upgrade packagename
 
 ## Running:
 Run Python scripts with:
