@@ -57,4 +57,4 @@ Update both system and virtual environment packages
 ## Running:
 Run Python scripts with:
 
- [path/to/venv]/bin/python myscript.py
+    [path/to/venv]/bin/python myscript.py
