@@ -45,6 +45,8 @@ def predict_and_plot_3D():
         ax.set_ylabel('Average Sunlight Intensity')
         ax.set_zlabel('Mood Score')
         plt.title('3D Plot of Mood Score Prediction')
+        
+        plt.savefig("3DGraph.png")
         plt.show()
 
     except ValueError:

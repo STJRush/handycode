@@ -31,7 +31,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Training the model
-model.fit(X_train_scaled, Y_train, epochs=10, validation_split=0.2)
+model.fit(X_train_scaled, Y_train, epochs=410, validation_split=0.2)
 
 # Evaluate the model on the test set
 mse = model.evaluate(X_test_scaled, Y_test)
@@ -60,6 +60,9 @@ def plot_2d_graphs(X, Y):
         plt.title(f'Mood Score vs {column}')
         plt.xlabel(column)
         plt.ylabel('Mood Score')
+        
+        plt.savefig("NeuralNetworkOutputChart.png")
+        
         plt.show()
 
 # Calling the function with the original (unscaled) data
