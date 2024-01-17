@@ -9,6 +9,12 @@
 # Change the titles of each of my columns to your own titles
 # Do the same in the code below
 
+# The model which given ABC to predict X then works like this:
+
+# predicted_X_Value = predict_mood(A,B,C)
+# print("The predicted value is", predicted_X_Value)
+
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -92,7 +98,7 @@ print("WHAT-IF QUESTION 1")
 print("Let's test what the mood will be if the sunlight is very low")
 
 # Low values for all 3 parameters
-sunlight_hours = 3
+sunlight_hours = 2
 average_sunlight = 100
 peak = 200
 
@@ -156,6 +162,9 @@ peak = 600
 doublePeakOutcome = predict_mood(sunlight_hours, average_sunlight, peak)  # Example values
 print("The double peak mood is", doublePeakOutcome)
 print("")
+
+
+# PRINTED FEEDBACK
 
 print("OUTCOME:")
 if doubleAverageOutcome > doublePeakOutcome:

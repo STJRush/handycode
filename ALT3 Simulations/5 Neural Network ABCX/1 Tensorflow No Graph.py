@@ -46,7 +46,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Training the model
-model.fit(X_train_scaled, Y_train, epochs=230, validation_split=0.2)
+model.fit(X_train_scaled, Y_train, epochs=400, validation_split=0.2)
 
 # Evaluate the model on the test set
 mse = model.evaluate(X_test_scaled, Y_test)

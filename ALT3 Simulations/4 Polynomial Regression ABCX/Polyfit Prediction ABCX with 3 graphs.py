@@ -17,7 +17,7 @@ Y = data['Mood_Score']
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
 
 # Create a PolynomialFeatures object with a specified degree, e.g., 2
-poly = PolynomialFeatures(degree=3)
+poly = PolynomialFeatures(degree=2)
 
 # Function to plot scatter plot with polynomial trendline and highlight prediction
 def plot_scatter_trendline_with_prediction(x, y, user_input, xlabel, ylabel, title):
