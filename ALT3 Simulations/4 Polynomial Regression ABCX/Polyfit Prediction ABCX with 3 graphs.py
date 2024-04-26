@@ -44,6 +44,10 @@ def plot_scatter_trendline_with_prediction(x, y, user_input, xlabel, ylabel, tit
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.title(title)
+    
+    # save as an image
+    plt.savefig("PolyfitChart.png")
+    
     plt.show()
 
 # User input for predictions

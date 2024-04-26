@@ -1,5 +1,7 @@
 # Simple Timer Code
 
+# Sometimes you want to graph things over time. This lets you collect time values for your graph or csv.
+
 from time import time as time_now
 from time import sleep
 

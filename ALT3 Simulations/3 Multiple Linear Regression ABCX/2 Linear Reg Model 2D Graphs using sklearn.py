@@ -76,6 +76,11 @@ def plot_scatter_trendline(x, y, xlabel, ylabel, title):
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.title(title)
+    
+    # save chart to an image
+    plt.savefig("2DGraph.png")
+    
+    # preview chart in Thonny
     plt.show()
 
 # Plotting each independent variable against the dependent variable
