@@ -15,6 +15,8 @@ gameDisplay.blit(pokeScreen1, (0,0))
 pygame.display.update()
 sleep(1)
 
+x = input("sdsdsd")
+print(x)
 
 #repeats movement 100 times
 for leftyrighty in range(0,100): #change "leftyrighty" from 0 to 100
@@ -24,6 +26,8 @@ for leftyrighty in range(0,100): #change "leftyrighty" from 0 to 100
     gameDisplay.blit(garyImg, (leftyrighty,0)) # load gary pic at position x,y with x changing (renamed it leftyrighty)
     pygame.display.update() # actually show changes
     sleep(0.005) #add a pause so it's not totally instant
+    
+
 
 pygame.quit()
 quit()
