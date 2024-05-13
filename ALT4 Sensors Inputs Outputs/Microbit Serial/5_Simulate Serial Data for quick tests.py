@@ -1,7 +1,7 @@
 # Sim mode allows you to test your project when a microbit is not connected
 
 # Set the simMode  boolean variable to 1 to simulate values and back to 0 to read from Microbit
-simMode = 1
+simMode = 0
 
 import serial
 import time
@@ -30,9 +30,7 @@ def getSimValue():
 
 
 # Create empty list to store data later
-dataList =[]
-
-
+dataList = []
 
 
 if simMode == 0:
@@ -56,6 +54,7 @@ for x in range(10):
         
         data = readSerial()
         
+    # data gets saved to the list
     dataList.append(data)
     
 
