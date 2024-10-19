@@ -1,5 +1,5 @@
-# PicoW Version
-# Must install firmware from https://micropython.org/download/rp2-pico-w/
+# Only works on a PicoW/WH: That's the pico with the silver metal rectangle on it
+
 import machine, network
 from time import sleep
 led = machine.Pin("LED", machine.Pin.OUT)
