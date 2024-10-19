@@ -1,0 +1,43 @@
+# PicoW Version
+# Must install firmware from https://micropython.org/download/rp2-pico-w/
+import machine, network
+from time import sleep
+led = machine.Pin("LED", machine.Pin.OUT)
+
+# flash LED once on boot 
+led.on()
+sleep(2)
+led.off()
+
+
+
+
+# Enter your wiFi network details here
+ssid = "mehotspot"
+password = "12345678"
+
+# Connect to WiFi
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+
+if not wlan.isconnected():
+    print("Connecting to le WiFi...")
+    wlan.connect(ssid, password)
+    
+    while not wlan.isconnected():
+        print("trying", end="..")
+        sleep(1)
+
+# flash LED 5 times when WiFi connected on boot 
+for x in range(5):
+    led.on()
+    sleep(0.2)
+    led.off()
+    sleep(0.2)
+    
+print("Hurray! Your pico is connected to WiFi with the following IP address:")
+print(wlan.ifconfig())
+
+
+
+
