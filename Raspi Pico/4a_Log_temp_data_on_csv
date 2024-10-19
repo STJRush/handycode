@@ -1,0 +1,44 @@
+import time
+from machine import ADC
+
+# Internal temperature sensor is connected to ADC channel 4
+temp_sensor = ADC(4)
+
+def read_internal_temperature():
+    # Read the raw ADC value
+    adc_value = temp_sensor.read_u16()
+
+    # Convert ADC value to voltage
+    voltage = adc_value * (3.3 / 65535.0)
+
+    # Temperature calculation based on sensor characteristics
+    temperature_celsius = 27 - (voltage - 0.706) / 0.001721
+
+    return temperature_celsius
+
+def log_temperature_to_csv(file_name="temperature_log.csv"):
+    temperatureC = read_internal_temperature()
+    
+    # Try to open the file in read mode to check if it exists
+    try:
+        with open(file_name, "r") as file:
+            file_exists = True
+    except OSError:
+        file_exists = False
+
+    # Open the file in append mode and write the temperature data
+    with open(file_name, "a") as file:
+        # If file doesn't exist, write the header
+        if not file_exists:
+            file.write("Temperature (C)\n")
+        
+        # Log the temperature only
+        file.write(f"{temperatureC:.2f}\n")
+
+    print("Temperature logged:", temperatureC, "°C")
+
+# Example: Log the temperature every 10 seconds
+while True:
+    log_temperature_to_csv()
+    time.sleep(10)
+
