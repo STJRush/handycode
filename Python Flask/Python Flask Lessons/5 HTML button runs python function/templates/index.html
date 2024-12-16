@@ -1,0 +1,15 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Pizza of the Day: {{ pizza }}</h1>
+    <h2>Health: {{ health }}</h2>
+    <form action="/button-clicked" method="POST">
+        <button type="submit">Click Me to Trigger Python!</button>
+    </form>
+</body>
+</html>

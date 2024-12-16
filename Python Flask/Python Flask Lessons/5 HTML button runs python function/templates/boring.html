@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boring Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: grey;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            flex-direction: column;
+        }
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: black;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/boring">Boring Page</a>
+    </nav>
+    Welcome to the Boring Page.<br><br>
+	
+	Things that are boring:<br><br>
+	
+	{{rando_boring_thing}}<br><br>
+	
+	<p> Hit F5 to refresh</p>
+	
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disco Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        nav {
+            background: black; /* Fixed background color for nav */
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 10; /* Ensure nav stays above other elements */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/boring">Boring Page</a>
+    </nav>
+    <div class="content">
+        Welcome to the Disco!
+        <br><br>
+        My favorite pizza is...
+        {{ pizza }}
+        <br><br>
+        Your health score is...
+        {{ health }}
+    </div>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        setInterval(() => {
+            document.body.style.backgroundColor = getRandomColor();
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disco Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    Welcome to the Disco!
+	
+	
+	<!Try add a python variable anywhere here in the body>
+	
+	
+	
+	
+	
+	
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        setInterval(() => {
+            document.body.style.backgroundColor = getRandomColor();
+        }, 1000);
+    </script>
+</body>
+</html>
