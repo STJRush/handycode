@@ -14,9 +14,10 @@ def home():
     # define your varaibles as normal
     pizza = "diabolo"
     health = 10
+    jojo = 23
     
     # pass each variable on to your webpage (with a chance to rename them)
-    return render_template("index.html", pizza=pizza, health=health)
+    return render_template("index.html", pizza=pizza, health=health, jojo=jojo) 
 
 
 app.run(host='0.0.0.0', port=6001, debug=False)
