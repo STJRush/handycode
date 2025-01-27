@@ -34,7 +34,7 @@ keyboard.release_all()
 time.sleep(5)
 
 # Type the YouTube video URL
-layout.write('https://youtu.be/Wk92Wefq3pM?si=QDg3csixYBBkV-sB')
+layout.write('https://www.youtube.com/watch?v=qItugh-fFgg')
 
 time.sleep(1)
 
