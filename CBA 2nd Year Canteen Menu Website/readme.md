@@ -1,4 +1,4 @@
-You can find a video tutorial here:
+You can find a video tutorial here: (Note: This year we're using "code sandbox" instead of replit)
 
 https://www.youtube.com/watch?v=XKV9NRB3CGo
 
