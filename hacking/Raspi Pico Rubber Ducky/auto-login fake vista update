@@ -1,0 +1,51 @@
+import time
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
+from adafruit_hid.keycode import Keycode
+
+# Create a Keyboard object using the default USB HID devices
+keyboard = Keyboard(usb_hid.devices)
+
+# Create a KeyboardLayout object for our US keyboard
+layout = KeyboardLayoutUS(keyboard)
+
+# Pause to ensure the host sees the keyboard
+time.sleep(3)
+
+# Simulate pressing the Windows key
+keyboard.press(Keycode.WINDOWS)
+keyboard.release_all()
+
+# Wait for the Start menu to open
+time.sleep(1)
+
+# Type "Google Chrome"
+layout.write('Google Chrome')
+
+# Wait for search results to appear
+time.sleep(1.5)
+
+# Press Enter to open Chrome
+keyboard.press(Keycode.ENTER)
+keyboard.release_all()
+
+# Wait for Chrome to launch
+time.sleep(5)
+
+# Type the YouTube video URL
+layout.write('https://fakeupdate.net/vista/')
+
+time.sleep(1)
+
+# Press Enter to navigate to the video
+keyboard.press(Keycode.ENTER)
+keyboard.release_all()
+
+keyboard.press(Keycode.f11)
+keyboard.release_all()
+
+time.sleep(10)
+
+keyboard.press(Keycode.ENTER)
+keyboard.release_all()
