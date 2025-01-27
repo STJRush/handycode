@@ -1,0 +1,35 @@
+# save this as code.py to run automatically
+
+import time
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
+from adafruit_hid.keycode import Keycode
+
+# Create a Keyboard object using the default USB HID devices
+keyboard = Keyboard(usb_hid.devices)
+
+# Create a KeyboardLayout object for our US keyboard
+layout = KeyboardLayoutUS(keyboard)
+
+# Pause to ensure the host sees us
+time.sleep(3)
+
+# Type "Danny"
+layout.write('STJTestStudent')
+
+# Wait 1 second
+time.sleep(1)
+
+# Press and release the TAB key
+keyboard.press(Keycode.TAB)
+keyboard.release_all()
+
+# Wait another 1 second
+time.sleep(1)
+
+# Type "Manny"
+layout.write('Test123')
+
+keyboard.press(Keycode.ENTER)
+keyboard.release_all()
