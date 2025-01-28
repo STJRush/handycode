@@ -26,7 +26,7 @@ That is all you SHOULD have in your CBA but for further marks, ONCE YOU HAVE MET
 
 Here are some pitfalls that some students have had in the past:
 
-- Do not add more than 3 main locations. Adding further locations will gets no more marks. (that's not counting the secret area with the boss fight). Adding 5 more stabilizers to your bike will not help.
+- Do not add more than 3 main locations. Adding further locations will gets no more marks. (that's not counting the secret area with the boss fight). Adding 5 more stabilizers to your bike will not help. You get marks for more features not the same features five more times.
 
 - Don't do any music or sounds or fancy things until the 7 main requirments above are complete. 
 
