@@ -22,4 +22,12 @@ That is all you SHOULD have in your CBA but for further marks, ONCE YOU HAVE MET
 - Use pygame to make a minimap to keep track of your location
 - Use an LLM to make realistic chat with an NPC or boss
 
+### THAR BE DRAGONS!
+
+Here are some pitfalls that some students have had in the past:
+
+- Do not add more than 3 main locations. Adding further locations will gets no more marks. (that's not counting the secret area with the boss fight). Adding 5 more stabilizers to your bike will not help.
+
+- Don't do any music or sounds or fancy things until the 7 main requirments above are complete. 
+
 
