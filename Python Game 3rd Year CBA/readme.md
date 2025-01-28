@@ -1,4 +1,6 @@
+
 # Python Text Based Adventure
+![Vox Machina]([https://myoctocat.com/assets/images/base-octocat.svg](https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/02/Vox-Machina.jpg))
 
 - Use python to make a game where the player explores a world, unlocks secrets and fights the Big Bad Evil Guy.
 
