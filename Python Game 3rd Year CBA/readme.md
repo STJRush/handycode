@@ -32,4 +32,6 @@ Here are some pitfalls that some students have had in the past:
 
 - Don't do any music or sounds or fancy things until the 7 main requirments above are complete. 
 
+- I have included templates for each lesson but I will not accept any projects with my same locations (Beach, Forest, Mountains). You need to change these to your own locations.
+
 
