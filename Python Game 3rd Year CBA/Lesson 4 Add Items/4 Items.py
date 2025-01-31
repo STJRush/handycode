@@ -1,6 +1,6 @@
 # add inventory
 
-# make your list
+###### NEW BIT: make your list
 bag_list = []
 
 # Your first location
@@ -8,7 +8,7 @@ def beach():
 
     print("You get to the (b)each 🏖️")
     
-    # add the treasure
+    #####NEW BIT add the treasure
     print("Inventory",bag_list)
     print("You find a shell!")
     bag_list.append("Shell")
