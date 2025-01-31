@@ -1,0 +1,6 @@
+username,date,metric,value
+GUY1,today,steps,9001.0
+GUY1,today,steps,9008.0
+GUY3,today,time,10.0
+GUY3,today,time,12.0
+GUY3,today,time,30.0

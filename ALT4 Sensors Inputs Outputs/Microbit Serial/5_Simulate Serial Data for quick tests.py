@@ -1,7 +1,7 @@
 # Sim mode allows you to test your project when a microbit is not connected
 
 # Set the simMode  boolean variable to 1 to simulate values and back to 0 to read from Microbit
-simMode = 0
+simMode = 1
 
 import serial
 import time
