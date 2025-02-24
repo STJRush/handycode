@@ -2,7 +2,7 @@ Tasks:
 
 Take the block of code for your location eg. beach and make it function. 
 A function is a few lines of code in a block with a name and brackets eg. beach() or spell()
-
+ 
 Whenever you say that magic word (when you call the function), python will run that
 block of code.
 
