@@ -19,11 +19,14 @@ forest()
 This way python knows what to do when you call the function. eg.
 
 Example 1: 
+```python
 def beach():
+```
 
 Example 2: 
+```python
 def forest():
-
+```
 3. Indent only the lines of code you want in your function.
 
 Example 1: 
