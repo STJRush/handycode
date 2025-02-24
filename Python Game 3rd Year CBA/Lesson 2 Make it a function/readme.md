@@ -10,10 +10,14 @@ block of code.
 1. Name your function. Give your function a name eg.
 
 Example 1: 
+python```
 beach()
+```
 
-Example 2: 
+Example 2:
+python```
 forest()
+```
 
 2. Add proper syntax. Add "def" and a colon ":"  to define the function the first time you describe it.
 This way python knows what to do when you call the function. eg.
