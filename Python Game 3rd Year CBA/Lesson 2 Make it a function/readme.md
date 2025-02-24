@@ -10,12 +10,13 @@ block of code.
 1. Name your function. Give your function a name eg.
 
 Example 1: 
-python```
+
+```python
 beach()
 ```
 
 Example 2:
-python```
+```python
 forest()
 ```
 
