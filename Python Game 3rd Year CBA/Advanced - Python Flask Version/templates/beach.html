@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beach</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='beachpic.png') }}");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .container {
+            margin: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>You are at the Beach 🏖️</h1>
+    <p>Your Inventory: {{ bag }}</p>
+    <p>You find something!</p>
+    <p><a class="button" href="{{ url_for('mountains') }}">Go to the Mountains</a></p>
+    <p><a class="button" href="{{ url_for('forest') }}">Go to the Forest</a></p>
+</div>
+</body>
+</html>

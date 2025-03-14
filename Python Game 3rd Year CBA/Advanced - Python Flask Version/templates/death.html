@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Died</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='deathpic.png') }}");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .container {
+            margin: 50px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>U ded</h1>
+    <p>You died so much, you crash python.</p>
+    <p><a class="button" href="{{ url_for('index') }}">Restart Game</a></p>
+</div>
+</body>
+</html>

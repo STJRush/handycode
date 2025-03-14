@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mountains</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='mountainspic.png') }}");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .container {
+            margin: 50px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>You are at the Mountains 🌋</h1>
+    <p>You see a keyhole in the mountainside.</p>
+    <p>You don't have any keys yet.</p>
+    <p><a class="button" href="{{ url_for('forest') }}">Go to the Forest</a></p>
+    <p><a class="button" href="{{ url_for('beach') }}">Go to the Beach</a></p>
+</div>
+</body>
+</html>
