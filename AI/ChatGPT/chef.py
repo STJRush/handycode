@@ -1,14 +1,14 @@
-from openai import OpenAI
-import secrets  # Import the secrets file
+import openai
+import config  # Import the config file containing the API key
 
-# Use the API key stored in secrets.py
-client = OpenAI(api_key=secrets.OPENAI_API_KEY)
+# Set up the OpenAI API key using the variable from config.py
+openai.api_key = config.OPENAI_API_KEY
 
 # Get user input
 user_input = input("Enter your request: ")
 
-completion = client.chat.completions.create(
-    model="gpt-4o",
+response = openai.ChatCompletion.create(
+    model="gpt-4",
     messages=[
         {
             "role": "system",
@@ -21,4 +21,4 @@ completion = client.chat.completions.create(
     ]
 )
 
-print(completion.choices[0].message.content)
+print(response["choices"][0]["message"]["content"])

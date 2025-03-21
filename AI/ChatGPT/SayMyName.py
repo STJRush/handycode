@@ -1,8 +1,10 @@
 import openai
 import random
 
+from secrets import *
+
 # Replace with thy most sacred OpenAI API key
-openai.api_key = ""
+
 
 # A list of names most noble and enigmatic
 npc_names = ["Benedict", "Horatio", "Cassius", "Lysander", "Orlando"]
