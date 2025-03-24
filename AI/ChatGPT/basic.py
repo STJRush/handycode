@@ -1,8 +1,13 @@
-from openai import OpenAI
-import secrets  # Import the secrets file
+# Uuse pip install --upgrade openai to ensure you have the latest version of the openai package.
+# The OpenAI class is now available in the openai package, which simplifies the process of making API requests.
+# Find the documentation for the OpenAI class here: https://platform.openai.com/docs/guides/text?api-mode=chat&lang=python
 
-# Use the API key stored in secrets.py
-client = OpenAI(api_key=secrets.OPENAI_API_KEY)
+
+rom secrets import API_KEY
+from openai import OpenAI
+
+# Ensure your openai package is updated to the version that supports the OpenAI class.
+client = OpenAI(api_key=API_KEY)
 
 completion = client.chat.completions.create(
     model="gpt-4o",
