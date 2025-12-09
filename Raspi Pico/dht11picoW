@@ -1,0 +1,50 @@
+# Note to future Danny: The pico with micropython has a dht11 library built in so no need go managing packages.
+# You can just connect a DHT11 sensor and it will work out of the box
+
+from machine import Pin
+import dht
+import time
+
+sensor = dht.DHT11(Pin(22))
+
+while True:
+
+    sensor.measure()
+    temp = sensor.temperature()
+    hum = sensor.humidity()  
+
+    print("Readings are:",temp,hum)
+
+    time.sleep(2)
+
+
+
+  Raspberry Pi Pico setup for DHT11
+   _______
+ __[     ]__
+[  [MICRO]  ]
+[  [ USB ]  ]
+[  [_____]  ]
+[           ]
+[ 0    VBUS ] <----   +5V over USB comes from this top corner pin. This is VCC on the DHT11        
+[ 1    VSYS ] 
+[ GND  GND  ] <----   GND is 3rd pin down from top right near USB. GND on the DHT11
+[ 2    3V3  ] 
+[ 3    3v3  ] 
+[ 4    REF  ] 
+[ 5    28   ] 
+[ GND  GND  ] 
+[ 6    27   ] 
+[ 7    26   ] 
+[ 8    RUN  ]
+[ 9    22   ]   <--- In Danny's code, the DHT11's data pin connected here
+[ GND  GND  ]
+[ 10   21   ]
+[ 11   20   ]
+[ 12   19   ]
+[ 13   18   ]
+[ GND  GND  ] 
+[ 14   17   ]
+[ 15   16   ] 
+[   o o o   ]
+ -----------
