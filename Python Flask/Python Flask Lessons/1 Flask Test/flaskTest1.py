@@ -1,3 +1,7 @@
+# Copy paste into python (Thonny) to run this. 
+# if you get "flask module not found", type CTRL+ T to run in terminal. Then type "pip install flask"
+# if pip won't run, you need to install python from python.org (not the manager) and click the "Add to Path" box on install.
+
 # Run the program and then click on the blue hyperlink IP address to open the webpage
 # If this loads forever, try another port eg. 6002 and set debug to False
 # after "Press CTRL+C to quit" you should see anther line in the console, something like
